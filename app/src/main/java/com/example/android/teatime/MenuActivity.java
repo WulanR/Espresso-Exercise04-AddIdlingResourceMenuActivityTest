@@ -29,7 +29,7 @@ import com.example.android.teatime.model.Tea;
 import java.util.ArrayList;
 
 // TODO (1) Implement ImageDownloader.DelayerCallback
-public class MenuActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity implements ImageDownloader.DelayerCallback {
 
     public final static String EXTRA_TEA_NAME = "com.example.android.teatime.EXTRA_TEA_NAME";
     Intent mTeaIntent;
