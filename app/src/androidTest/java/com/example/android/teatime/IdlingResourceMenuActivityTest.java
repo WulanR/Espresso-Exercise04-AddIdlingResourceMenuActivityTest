@@ -28,6 +28,11 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static android.support.test.espresso.Espresso.onData;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static org.hamcrest.Matchers.anything;
+
 /**
  * Usually Espresso syncs all view operations with the UI thread as well as AsyncTasks, but it can't
  * do so with custom resources (e.g. activity or service). For such cases, we can register the
@@ -75,8 +80,7 @@ public class IdlingResourceMenuActivityTest {
     // TODO (7) Test that the gridView with Tea objects appears and we can click a gridView item
     @Test
     public void idlingResourceTest() {
-
-
+        onData(anything()).inAdapterView(withId(R.id.tea_grid_view)).atPosition(0).perform(click());
     }
 
     // TODO (8) Unregister resources when not needed to avoid malfunction
