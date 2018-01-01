@@ -67,15 +67,15 @@ public class IdlingResourceMenuActivityTest {
     // the test is run.
     @Before
     public void registerIdlingResource() {
-
+        mIdlingResource = mActivityTestRule.getActivity().getIdlingResource();
+        // To prove that the test fails, omit this call:
+        Espresso.registerIdlingResources(mIdlingResource);
     }
 
     // TODO (7) Test that the gridView with Tea objects appears and we can click a gridView item
     @Test
     public void idlingResourceTest() {
-        mIdlingResource = mActivityTestRule.getActivity().getIdlingResource();
-        // To prove that the test fails, omit this call:
-        Espresso.registerIdlingResources(mIdlingResource);
+
 
     }
 
