@@ -18,12 +18,14 @@ package com.example.android.teatime;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.example.android.teatime.IdlingResource.SimpleIdlingResource;
 import com.example.android.teatime.model.Tea;
 
 import java.util.ArrayList;
@@ -35,6 +37,8 @@ public class MenuActivity extends AppCompatActivity implements ImageDownloader.D
     Intent mTeaIntent;
 
     // TODO (2) Add a SimpleIdlingResource variable that will be null in production
+    @Nullable
+    private SimpleIdlingResource mIdlingResource;
 
     /**
      * TODO (3) Create a method that returns the IdlingResource variable. It will
